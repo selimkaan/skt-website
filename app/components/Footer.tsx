@@ -29,12 +29,12 @@ export default function Footer() {
             LinkedIn
           </a>
           <a 
-            href="https://medium.com/@selimkaantopac" 
+            href="https://www.instagram.com/selimkaan.t/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:text-black transition-colors"
           >
-            Medium
+            Instagram
           </a>
         </div>
 
