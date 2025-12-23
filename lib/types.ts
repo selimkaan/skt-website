@@ -130,3 +130,4 @@ export interface BlogPost {
 // Category filter type
 export type CategoryFilter = "Hepsi" | string;
 
+

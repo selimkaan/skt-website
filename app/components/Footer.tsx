@@ -13,7 +13,7 @@ export default function Footer() {
         
         <div className="flex space-x-10 text-sm font-medium tracking-widest uppercase text-gray-500">
           <a 
-            href="https://twitter.com/selimkaantopac" 
+            href="https://x.com/selimkaan_t" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:text-black transition-colors"
@@ -21,7 +21,7 @@ export default function Footer() {
             Twitter
           </a>
           <a 
-            href="https://linkedin.com/in/selimkaantopac" 
+            href="https://www.linkedin.com/in/selim-kaan-topac/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:text-black transition-colors"
@@ -45,4 +45,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 
