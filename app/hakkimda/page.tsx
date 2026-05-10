@@ -52,7 +52,7 @@ const socialLinks = [
   },
   {
     name: '1K Kitap',
-    href: 'https://1000kitap.com/',
+    href: 'https://1000kitap.com/selimkaan',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -134,25 +134,34 @@ export default function HakkimdaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-4">
               <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-                &ldquo;Merak ettikçe<br />öğreniyor,<br />öğrendikçe<br />yazıyorum.&rdquo;
+                &ldquo;Yuvarlanıp<br />gidiyoruz&rdquo;
               </h2>
             </div>
             <div className="md:col-span-7 md:col-start-6">
               <div className="space-y-6 text-gray-500 leading-[1.8] text-base md:text-[17px]">
                 <p>
-                  Merhaba, ben Selim Kaan. Teknoloji, finans ve uluslararası ilişkiler başta olmak üzere birçok farklı alanda araştırma yapmayı ve öğrendiklerimi paylaşmayı seven biriyim. Bu blog, düşüncelerimi ve deneyimlerimi kaleme aldığım kişisel alanım.
+                  Selam, ben Selim Kaan. Tek bir sıfat ile kendimi tanımlamakta hep zorlanmışımdır. O sebeple bulunduğum ortamlara göre farklı farklı şekillerde tanıtırım kendimi her seferinde. Şu anda genele hitap ederken kendimi nasıl tanıtsam diye zorlandım o sebeple.
                 </p>
                 <p>
-                  Yatırım dünyasına olan ilgim beni makroekonomi, enerji sektörü ve jeopolitika gibi alanlarda derinleşmeye yönlendirdi. Piyasaları takip ederken sadece rakamlarla değil, arkasındaki hikâyelerle de ilgileniyorum. Her yatırım kararının bir dünya görüşünü yansıttığına inanıyorum.
+                  Güncel teknolojileri takip eden, dünyayı anlamlandırmaya çalışan, proje geliştirmeyi seven ve kendini bolca maceralara atan birisiyim. Kendini bulma veya kendini keşfetme gibi kavramlara çok inanmam. Hayatın daha çok kendini yaratmak üzerine olduğunu düşünürüm. Ben de hayatımı elimden geldiğince olmak istediğim kişiye dönüşecek şekilde yaşamaya çalışıyorum.
                 </p>
                 <p>
-                  Teknoloji tarafında ise yazılım geliştirme, yapay zeka ve yeni nesil teknolojileri yakından takip ediyorum. Teknevia projesiyle teknoloji dünyasındaki gelişmeleri Türkçe olarak aktarmaya çalışıyorum. Kodlamayı sadece bir araç olarak değil, düşünce biçimi olarak görüyorum.
+                  Peki bu hayattan ne istiyorum?
                 </p>
                 <p>
-                  Hayatın sadece iş ve kariyer olmadığına inanıyorum. Yelkencilik tutkumla denizde vakit geçirmeyi, basketbol oynayarak enerjimi atmayı ve seyahat ederek yeni kültürler keşfetmeyi seviyorum. Şimdiye kadar 5 farklı ülke ziyaret ettim ve bu sayıyı artırmaya devam ediyorum.
+                  İnsan daha çok bildikçe daha çok mutlu olmaz ama ben öğrenmeye dair istencimi pek baskılayamıyorum. O sebeple yaşadıkça bu dünyayı daha çok anlamlandırabilmek istiyorum. Bu hayatta daha çok şey öğrenmek istiyorum.
                 </p>
                 <p>
-                  Bu blog, tüm bu ilgi alanlarımın kesiştiği bir alan. Burada yatırım notlarımı, teknoloji analizlerimi, kitap özetlerimi ve hayata dair gözlemlerimi bulabilirsiniz. Amacım sadece yazmak değil, yazdıklarımla düşünmeye teşvik etmek.
+                  İçimi yakıp kavuran bir üretme istenci duyuyorum. Öğrendiklerimi projeleştirmek ve bu projelerim üzerine çalışmak çoğu zaman hayatta beni en heyecanlandıran şey oluyor. Bu hayatta daha çok proje geliştirmek istiyorum.
+                </p>
+                <p>
+                  20 küsür yıllık hayatımda çok da gördüm geçirdim diyemem ama büyüdükçe sevdiklerimle geçirdiğim anların değerini daha da fark eder oldum. Bana kalsa vaktimin çoğunu tek başıma çalışarak geçirmek isteyen birisiyim ama geriye dönüp baktığımda en keyifle hatırladığım anlarımın sevdiklerimle olan küçük anlar olduğunu fark ediyorum. Bu hayatta sevdiklerimle daha çok güzel an geçirmek istiyorum.
+                </p>
+                <p>
+                  Yeni&apos;yi keşfetmekten büyük bir haz duyuyorum. Bunu da en çok seyahat ederken yaşıyorum. Yeni bir şehire ayak basmak, dilini hiç bilmediğin bir ülkenin sokaklarında gezmek, hayatın bambaşka denklemlerle yaşandığı bir toplumu keşfetmek… En temel hatıralarım seyahat ederken ve kendimi hayal bile edemeyeceğim spontane maceraların içerisinde bulduğum anlarda oluştu. O sebeple daha çok gezmek daha çok keşfetmek istiyorum.
+                </p>
+                <p>
+                  Daha birçok şey daha sıralayabilirim. Bu yazıyı da 2 saat sonra veya yarın yazsam bambaşka şeyler yazıyor olurdum. Gün içinde çok değişken birisi olmasam da zaman içerisinde çok değiştim. O sebeple &ldquo;Selim Kaan sen eskiden böyle değildin çok değiştin&rdquo; derseniz anlarım büyük ihtimalle haklısınızdır.
                 </p>
               </div>
             </div>
@@ -170,18 +179,17 @@ export default function HakkimdaPage() {
             {/* Stats */}
             <div className="md:col-span-4">
               <p className="text-[11px] tracking-[0.2em] uppercase text-gray-400 font-bold mb-8">
-                Rakamlarla
+                Gezilen Ülke Sayısı
               </p>
               <div>
                 <span className="font-serif text-5xl md:text-6xl">5</span>
-                <p className="text-sm text-gray-400 mt-2 tracking-wide">Gezilen Ülke</p>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="md:col-span-4">
               <p className="text-[11px] tracking-[0.2em] uppercase text-gray-400 font-bold mb-8">
-                Beni Takip Edin
+                Bunlar Da Var
               </p>
               <div className="space-y-5">
                 {socialLinks.map((link) => (
