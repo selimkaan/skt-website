@@ -126,11 +126,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Content */}
         <div className="max-w-3xl mx-auto px-6 pb-32">
-          {/* Excerpt as lead paragraph */}
-          <p className="text-xl font-medium leading-relaxed italic text-gray-600 border-l-4 border-gray-200 pl-6 mb-12">
-            {post.excerpt}
-          </p>
-          
           {/* Main content */}
           <div 
             className="prose prose-lg max-w-none"
