@@ -107,6 +107,22 @@ body {
   @apply my-8;
 }
 
+.prose iframe,
+.prose video {
+  max-width: 100%;
+}
+
+/* WordPress embeds ship fixed width/height attributes (e.g. 640x360) */
+.prose iframe.youtube-player,
+.prose iframe[src*="youtube.com"],
+.prose iframe[src*="youtube-nocookie.com"],
+.prose iframe[src*="player.vimeo.com"],
+.prose video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 .prose figcaption {
   @apply text-center text-sm text-gray-500 mt-3 italic;
 }

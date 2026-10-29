@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { BlogPost } from '@/lib/types';
+import { BlogPostSummary } from '@/lib/types';
 import BlogCard from './BlogCard';
 import CategoryFilter from './CategoryFilter';
 
 interface BlogListProps {
-  posts: BlogPost[];
+  posts: BlogPostSummary[];
   categories: { name: string; slug: string }[];
 }
 

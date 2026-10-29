@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Selim Kaan Topaç | Blog',
     description: 'Yatırım, girişimcilik ve hayata dair düşünceler.',
-    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

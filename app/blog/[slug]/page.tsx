@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/wordpress';
+import { DEFAULT_OG_IMAGE } from '@/lib/site';
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
 
@@ -46,13 +47,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       type: 'article',
       publishedTime: post.dateISO,
       authors: [post.author.name],
-      images: post.featuredImage ? [{ url: post.featuredImage }] : [],
+      images: [post.featuredImage ? { url: post.featuredImage } : DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.featuredImage ? [post.featuredImage] : [],
+      images: [post.featuredImage ?? DEFAULT_OG_IMAGE.url],
     },
   };
 }

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BlogPost } from '@/lib/types';
+import { BlogPostSummary } from '@/lib/types';
 
 interface BlogCardProps {
-  post: BlogPost;
+  post: BlogPostSummary;
 }
 
 export default function BlogCard({ post }: BlogCardProps) {

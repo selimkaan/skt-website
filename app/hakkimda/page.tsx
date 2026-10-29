@@ -125,7 +125,8 @@ export default function HakkimdaPage() {
                   alt="Selim Kaan Topaç"
                   width={800}
                   height={1000}
-                  className="w-full h-[500px] md:h-[640px] object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+                  sizes="(min-width: 1400px) 780px, (min-width: 768px) 55vw, 100vw"
+                  className="w-full h-[500px] md:h-[640px] object-cover object-top md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
                   priority
                 />
               </div>

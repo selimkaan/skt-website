@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getAllPosts, getAllCategories } from '@/lib/wordpress';
+import { getAllPosts, getAllCategories, toSummary } from '@/lib/wordpress';
 import { baseOpenGraph } from '@/lib/site';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -24,7 +24,7 @@ export default async function HomePage() {
     <div className="min-h-screen selection:bg-black selection:text-white bg-white">
       <Navbar />
       <Hero />
-      <BlogList posts={posts} categories={categories} />
+      <BlogList posts={posts.map(toSummary)} categories={categories} />
       <Footer />
     </div>
   );

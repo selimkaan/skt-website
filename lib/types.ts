@@ -128,6 +128,11 @@ export interface BlogPost {
   };
 }
 
+export type BlogPostSummary = Pick<
+  BlogPost,
+  'id' | 'slug' | 'title' | 'excerpt' | 'date' | 'category' | 'categorySlug' | 'featuredImage'
+>;
+
 // Category filter type
 export type CategoryFilter = "Hepsi" | string;
 

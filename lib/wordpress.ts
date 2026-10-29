@@ -1,4 +1,4 @@
-import { WordPressPost, WordPressPostsResponse, BlogPost } from './types';
+import { WordPressPost, WordPressPostsResponse, BlogPost, BlogPostSummary } from './types';
 
 // WordPress.com REST API endpoint
 const WORDPRESS_COM_API = 'https://public-api.wordpress.com/rest/v1.1';
@@ -24,6 +24,40 @@ function formatDate(dateString: string): string {
  */
 function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, '').trim();
+}
+
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  quot: '"',
+  apos: "'",
+  nbsp: '\u00a0',
+  hellip: '…',
+  ndash: '–',
+  mdash: '—',
+  lsquo: '‘',
+  rsquo: '’',
+  ldquo: '“',
+  rdquo: '”',
+  laquo: '«',
+  raquo: '»',
+};
+
+/**
+ * Decode HTML entities in WordPress plain-text fields (title, excerpt).
+ * React escapes text on render, so these would otherwise show up literally.
+ */
+function decodeEntities(text: string): string {
+  return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, entity: string) => {
+    if (entity[0] === '#') {
+      const codePoint = entity[1].toLowerCase() === 'x'
+        ? parseInt(entity.slice(2), 16)
+        : parseInt(entity.slice(1), 10);
+      return Number.isNaN(codePoint) ? match : String.fromCodePoint(codePoint);
+    }
+    return NAMED_ENTITIES[entity.toLowerCase()] ?? match;
+  });
 }
 
 /**
@@ -71,8 +105,8 @@ function transformPost(post: WordPressPost): BlogPost {
   return {
     id: post.ID.toString(),
     slug: post.slug,
-    title: post.title,
-    excerpt: stripHtml(post.excerpt) || stripHtml(post.content).substring(0, 160) + '...',
+    title: decodeEntities(post.title),
+    excerpt: decodeEntities(stripHtml(post.excerpt) || stripHtml(post.content).substring(0, 160) + '...'),
     content: post.content,
     date: formatDate(post.date),
     dateISO: post.date,
@@ -84,6 +118,22 @@ function transformPost(post: WordPressPost): BlogPost {
       name: post.author.name,
       avatar: post.author.avatar_URL,
     },
+  };
+}
+
+/**
+ * Drop the fields list views don't render, so client components don't receive full post HTML.
+ */
+export function toSummary(post: BlogPost): BlogPostSummary {
+  return {
+    id: post.id,
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt,
+    date: post.date,
+    category: post.category,
+    categorySlug: post.categorySlug,
+    featuredImage: post.featuredImage,
   };
 }
 
