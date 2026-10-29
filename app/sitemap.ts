@@ -1,41 +1,29 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/wordpress';
+import { SITE_URL } from '@/lib/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://selimkaantopac.com';
-  
-  // Get all posts
   const posts = await getAllPosts();
-  
-  // Generate sitemap entries for blog posts
+
   const blogEntries = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.dateISO),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.modifiedISO),
   }));
+
+  const latestModified = posts.reduce<Date | undefined>((latest, post) => {
+    const modified = new Date(post.modifiedISO);
+    return !latest || modified > latest ? modified : latest;
+  }, undefined);
 
   return [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
+      url: SITE_URL,
+      lastModified: latestModified,
     },
     {
-      url: `${baseUrl}/hakkimda`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/iletisim`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      url: `${SITE_URL}/hakkimda`,
     },
     ...blogEntries,
   ];
 }
-
 

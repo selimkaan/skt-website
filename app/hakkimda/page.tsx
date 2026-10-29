@@ -3,10 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { baseOpenGraph } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Hakkımda',
   description: 'Selim Kaan Topaç hakkında. Yatırım, teknoloji ve hayata dair düşünceler.',
+  alternates: { canonical: '/hakkimda' },
+  openGraph: {
+    ...baseOpenGraph,
+    type: 'profile',
+    url: '/hakkimda',
+    title: 'Hakkımda | Selim Kaan Topaç',
+    description: 'Selim Kaan Topaç hakkında. Yatırım, teknoloji ve hayata dair düşünceler.',
+  },
 };
 
 const socialLinks = [

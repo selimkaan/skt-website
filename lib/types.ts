@@ -118,6 +118,7 @@ export interface BlogPost {
   content: string;
   date: string;
   dateISO: string;
+  modifiedISO: string;
   category: string;
   categorySlug: string;
   featuredImage: string | null;

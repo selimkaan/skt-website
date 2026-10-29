@@ -31,12 +31,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
+  const path = `/blog/${post.slug}`;
+
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: path },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: path,
+      siteName: 'Selim Kaan Topaç Blog',
+      locale: 'tr_TR',
       type: 'article',
       publishedTime: post.dateISO,
       authors: [post.author.name],

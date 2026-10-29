@@ -1,25 +1,9 @@
-'use client';
-
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, Suspense } from 'react';
 import Script from 'next/script';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-function GoogleAnalyticsTracking() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    if (!GA_ID) return;
-
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
-    window.gtag?.('config', GA_ID, { page_path: url });
-  }, [pathname, searchParams]);
-
-  return null;
-}
-
+// Client-side route changes are counted by GA4 enhanced measurement ("page changes based on
+// browser history events"); sending page_view manually here would double-count them.
 export default function GoogleAnalytics() {
   if (!GA_ID) return null;
 
@@ -37,9 +21,6 @@ export default function GoogleAnalytics() {
           gtag('config', '${GA_ID}');
         `}
       </Script>
-      <Suspense fallback={null}>
-        <GoogleAnalyticsTracking />
-      </Suspense>
     </>
   );
 }

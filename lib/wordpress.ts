@@ -76,6 +76,7 @@ function transformPost(post: WordPressPost): BlogPost {
     content: post.content,
     date: formatDate(post.date),
     dateISO: post.date,
+    modifiedISO: post.modified,
     category: category.name,
     categorySlug: category.slug,
     featuredImage: getFeaturedImage(post),
